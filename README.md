@@ -120,16 +120,6 @@
                 animation: floatin 4s;
             }
             
-            .welcome {
-                position: relative;
-                top: -1125px;
-                left: 430px;
-                font-family: Brush Script MT;
-                font-size: 50px;
-                color: #ffffff;
-                text-decoration: none;
-                
-            }
             
             
             .subwaysurfers {
@@ -318,6 +308,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 75px
   font-size: 18px;
   padding: 11px;
   border: 1px solid #ddd;
