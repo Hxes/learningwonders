@@ -275,15 +275,12 @@
     <body> 
         
         `<div class="slitherio">
-            <a href="file:///media/fuse/drivefs-c80aaf46e227acb74b246bccd0d1a0ff/root/Slitherio.html" class="large-link"><h3>Slither.io</h3></a>
+            <a href="hxes.github.io/spanish" class="large-link"><h3>Slither.io</h3></a>
          </div>
 
          <div class="slope">
              <a href="https://drive.google.com/file/d/1IS41Lxh7Yuu4QZh7AcyhUGng_PuhwiEP/view" class="large-link"><h3>Slope</h3></a>
-         </div>
-
-         <div class="choose-bg">
-         </div>    
+         </div> 
 
          <div class="subwaysurfers">
             <a href="#" class="large-link"><h3>Subway Surfers</h3></a>
@@ -296,7 +293,7 @@
 <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 
 <ul id="myMenu">
-  <li><a href="file:///media/fuse/drivefs-c80aaf46e227acb74b246bccd0d1a0ff/root/Slitherio.html">Slither.io</a></li>
+  <li><a href="https://hxes.github.io/spanish">Slither.io</a></li>
   <li><a href="#">Slope</a></li>
   <li><a href="#">Subway Surfers</a></li>
   <li><a href="#">Cookie Clicker</a></li>
