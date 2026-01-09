@@ -308,7 +308,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 75px;
   font-size: 18px;
   padding: 11px;
   border: 1px solid #ddd;
