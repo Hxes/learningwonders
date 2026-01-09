@@ -8,12 +8,7 @@
         
         <style>
             
-            .welcome{
-                position: fixed;
-                top: 100px;
-                left: 550 px;
-
-            }
+            
             body {
             background-color: lightblue;
         }
@@ -50,7 +45,8 @@
             text-decoration: none;
             
         }
-            
+
+        
          
         .slitherio {
             background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8z4RFe7_CdwMA3BEaSUidYzbZ4fefYxqvmxJiER1NCed3G1rw");
@@ -113,7 +109,27 @@
                 
             }
 
-       
+            
+            
+            @keyframes fadein {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+            
+            .welcome {
+                animation: floatin 4s;
+            }
+            
+            .welcome {
+                position: relative;
+                top: -1125px;
+                left: 430px;
+                font-family: Brush Script MT;
+                font-size: 50px;
+                color: #ffffff;
+                text-decoration: none;
+                
+            }
             
             
             .subwaysurfers {
@@ -211,8 +227,8 @@
         }
         
         .circle {
-            position: fixed;
-            top: 100px;
+            position: relative;
+            top: -1300px;
             left: 1050px;
             width: 100px;
             height: 100px;
@@ -291,9 +307,12 @@
   <li><a href="#">Snow Rider 3d</a></li>
 </ul>
 
-<div class="welcome">
-    <h1>Welcome</h1>
-</div>
+
+    <div class="welcome">
+        <h1>Welcome</h1>
+
+    </div>
+   
         
 <style>
 /* Style the search box */
@@ -312,7 +331,7 @@
 /* Push menu below the fixed search bar */
 #myMenu {
   position: fixed;
-  top: 0;
+  top: 4.5;
   left: 0;
   list-style-type: none;
   padding: 0;
@@ -354,7 +373,7 @@ function myFunction() {
 </script>
 <div class="circle" id="circle">
         <div class="content" id="content">
-            <form><input type="text" id="bg" name="bg"><label for="bg"><button type="submit">Submit Game</button></label></form>
+            <form><input type="text" id="game" name="game"><label for="game"><button type="submit">Submit Game</button></label></form>
         </div>
     </div>
 
@@ -380,34 +399,6 @@ function myFunction() {
 
         
         </script>
-                        
-                        
-                        
-         
-            
-        
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                
 
 </html>
