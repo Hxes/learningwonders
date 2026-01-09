@@ -8,7 +8,12 @@
         
         <style>
             
-            
+            .welcome{
+                position: fixed;
+                top: 100px;
+                left: 550 px;
+
+            }
             body {
             background-color: lightblue;
         }
@@ -286,7 +291,9 @@
   <li><a href="#">Snow Rider 3d</a></li>
 </ul>
 
-   
+<div class="welcome">
+    <h1>Welcome</h1>
+</div>
         
 <style>
 /* Style the search box */
