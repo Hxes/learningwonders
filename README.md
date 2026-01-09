@@ -2,7 +2,7 @@
 <html>
     <head> 
         
-
+        <title>EduVentures | Trusted Online Learning Since 2015</title>
         <link rel="icon" type="image/png" href="images/edu.png">
         
         
