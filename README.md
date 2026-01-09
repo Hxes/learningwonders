@@ -264,10 +264,11 @@
     
     <body> 
         
-        `<div class="slitherio">
-            <a href="hxes.github.io/spanish" class="large-link"><h3>Slither.io</h3></a>
-         </div>
-
+        <div class="slitherio">
+  <a href="spanish.md" class="large-link">
+    <h3>Slither.io</h3>
+  </a>
+</div>
          <div class="slope">
              <a href="https://drive.google.com/file/d/1IS41Lxh7Yuu4QZh7AcyhUGng_PuhwiEP/view" class="large-link"><h3>Slope</h3></a>
          </div> 
