@@ -1,7 +1,7 @@
 <DOCTYPE HTML>
 <html>
     <head> 
-        <title>EduVentures | Trusted Online Learning Courses for 15 Years</title>
+        
 
         <link rel="icon" type="image/png" href="images/edu.png">
         
