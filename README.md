@@ -218,7 +218,7 @@
         
         .circle {
             position: relative;
-            top: -1300px;
+            top: -1200px;
             left: 1050px;
             width: 100px;
             height: 100px;
