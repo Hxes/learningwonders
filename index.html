@@ -22,6 +22,11 @@
             body {
             background-color: lightblue;
             overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
             .circle {
             background: rgba(255, 255, 255, 0.9);
@@ -268,13 +273,7 @@
 
   
     <style>
-        body {
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: lightblue;
-        }
+
         
         .circle {
             position: fixed;
@@ -552,7 +551,7 @@ document.getElementById('bgInput').addEventListener('keypress', function(e) {
 });
 
 // Reset button
-document.getElementById('resetBackgroundBtn').addEventListener('click', function() {
+document.getElementById('resetBtn').addEventListener('click', function() {
     document.body.style.backgroundImage = '';
     document.body.style.backgroundColor = 'lightblue';
     document.getElementById('bgInput').value = '';
