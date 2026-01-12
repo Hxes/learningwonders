@@ -18,13 +18,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
         <style>
 
+            .game-card {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-decoration: none;
+              cursor: pointer;
+              will-change: transform;
+            }
+
+            .game-card {
+              will-change: transform;
+            }
+
+
             
             @media (hover: hover) {
-              .slitherio:hover,
-              .slope:hover,
-              .subwaysurfers:hover,
-              .cookieclicker:hover {
-                    transform: scale(1.08);
+              .game-card:hover {
+                    transform: scale(1.15);
               }
             }
 
@@ -137,15 +148,8 @@
              .slitherio a {
                 text-decoration: none;
             }    
-            .slitherio:hover {
-                background-color: #dbdbdb;
-                box-shadow: 0 7px 15px rgba(0,0,0,0.2);
-                border: 5px solid #ffffff;
-                color: #dbdbdb;
-            }
-            .slitherio::after {
-                
-            }
+       
+        
 
 
             .slope {
@@ -173,20 +177,8 @@
                 inset: 0;           /* 3. Spans top, bottom, left, and right */
                 z-index: 1; 
             }    
-            .slope:hover {
-                background-color: #dbdbdb;
-                box-shadow: 0 7px 15px rgba(0,0,0,0.2);
-                border: 5px solid #ffffff;
-                color: #dbdbdb;
+    
 
-            }
-
-            .slopelink::after {
-                content: "";
-                position: absolute; /* 2. Positions the link over the entire div */
-                inset: 0;           /* 3. Spans top, bottom, left, and right */
-                z-index: 1; 
-            }
             @keyframes fadein {
                 0% {opacity: 0;}
                 100% {opacity: 1;}
@@ -229,20 +221,8 @@
             .subwaysurfers a {
                 text-decoration: none;
             }    
-            .subwaysurfers:hover {
-                background-color: #dbdbdb;
-                box-shadow: 0 7px 15px rgba(0,0,0,0.2);
-                border: 5px solid #ffffff;
-                color: #dbdbdb;
 
-            }
 
-            .subwaysurferslink::after {
-                content: "";
-                position: absolute; /* 2. Positions the link over the entire div */
-                inset: 0;           /* 3. Spans top, bottom, left, and right */
-                z-index: 1; 
-            }
 
             .cookieclicker {
             background-image: url("https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok");
@@ -265,21 +245,9 @@
               .cookieclicker a {
                 text-decoration: none;
             } 
-            .cookieclicker:hover {
-                box-shadow: 0 7px 15px rgba(0,0,0,0.2);
-                background-color: #dbdbdb;
-                border: 5px solid #ffffff;
-                color: #dbdbdb;
 
-
-            }
     
-            .cookieclickerlink::after {
-                content: "";
-                position: absolute; /* 2. Positions the link over the entire div */
-                inset: 0;           /* 3. Spans top, bottom, left, and right */
-                z-index: 1; 
-            }
+      
             .submit:hover {
                 transform:scale(1.05);
                 transition: transform 0.2s ease;
@@ -323,7 +291,8 @@
             transform: scale(1.2);
             box-shadow: 0 7px 15px rgba(0,0,0,0.2);
             background: rgba(255, 255, 255, 0.8);
-            border: 3px solid #dbdbdb;
+            box-shadow: 0 0 0 3px #dbdbdb;
+
         }
 
         .content {
@@ -411,25 +380,25 @@
     <body> 
         
      <div class="games"> 
-      <a href="spanish.html" class="slitherio large-link">
-         <div class="slitherio" title="Slither.io">
+      <a href="spanish.html" class="game-card slitherio large-link">
+         
             <h3>Slither.io</h3>
-         </div> 
+         
       </a>
           
 
-         <div class="slope" title="Slope 2">
-             <a href="https://drive.google.com/file/d/1IS41Lxh7Yuu4QZh7AcyhUGng_PuhwiEP/view" class="large-link" class="slopelink"><h3>Slope</h3></a>
-         </div>
+         
+             <a href="https://drive.google.com/file/d/1IS41Lxh7Yuu4QZh7AcyhUGng_PuhwiEP/view" class="game-card large-link slopelink"><h3>Slope</h3></a>
+         
   
 
-         <div class="subwaysurfers" title="Subway Surfers">
-            <a href="#" class="large-link" class="subwaysurferslink"><h3>Subway Surfers</h3></a>
-         </div>
+        
+            <a href="#" class="game-card large-link subwaysurferslink"><h3>Subway Surfers</h3></a>
+        
 
-         <div class="cookieclicker" title="Cookie Clicker">
-            <a href="#" class="large-link" class="cookieclickerlink"><h3>Cookie Clicker</h3></a>
-         </div>
+         
+            <a href="#" class="game-card large-link cookieclickerlink"><h3>Cookie Clicker</h3></a>
+         
     </div>
 
 <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
