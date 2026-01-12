@@ -143,6 +143,9 @@
                 border: 5px solid #ffffff;
                 color: #dbdbdb;
             }
+            .slitherio::after {
+                
+            }
 
 
             .slope {
@@ -165,6 +168,10 @@
         }
             .slope a {
                 text-decoration: none;
+                content: "";
+                position: absolute; /* 2. Positions the link over the entire div */
+                inset: 0;           /* 3. Spans top, bottom, left, and right */
+                z-index: 1; 
             }    
             .slope:hover {
                 background-color: #dbdbdb;
