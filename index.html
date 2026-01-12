@@ -17,17 +17,69 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
         <style>
+
             
+            @media (hover: hover) {
+              .slitherio:hover,
+              .slope:hover,
+              .subwaysurfers:hover,
+              .cookieclicker:hover {
+                    transform: scale(1.08);
+              }
+            }
+
+            @media (max-width: 768px) {
+
+                h3 {
+                font-size: 20px;
+                }
+
+                .welcome {
+                    position: static;
+                    text-align: center;
+                    margin-top: 100px;
+                    font-size: 36px;
+                }
+
+                .circle {
+                    top: 15px;
+                    right: 15px;
+                    left: auto;
+                    width: 70px;
+                    height: 70px;
+                }
+
+                #mySearch {
+                    height: 60px;
+                    font-size: 16px;
+                }
+            }
+            
+            
+            .slitherio,
+            .slope,
+            .subwaysurfers,
+            .cookieclicker {
+                  width: min(90vw, 500px);
+                  height: auto;
+                  aspect-ratio: 2 / 1;
+                  background-size: cover;
+                  background-position: center;
+            }
             
             body {
             background-color: lightblue;
             overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
         }
+            .games {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 120px;
+                gap: 50px;
+            }
+            
             .circle {
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
@@ -67,15 +119,10 @@
          
         .slitherio {
             background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8z4RFe7_CdwMA3BEaSUidYzbZ4fefYxqvmxJiER1NCed3G1rw");
-            position: relative;
-            top: 200px;
-            left: 350px;
             display: flex;
             justify-content: center;
             align-items: center;
-            place-items: center;
-            width: 500px;         
-            height: 250px;        
+            place-items: center;    
             background-color: #f0f0f0; 
             padding: 20px;        
             margin: 30px;         
@@ -83,16 +130,15 @@
             border-radius: 25px;
             z-index: 2;
             border: 1px solid #ffffff;
-            .slitherio a {
-                text-decoration: none;
-            }    
             
             cursor: pointer;
 
             transition: transform 0.7s ease;
         }
+             .slitherio a {
+                text-decoration: none;
+            }    
             .slitherio:hover {
-                transform:scale(1.15);
                 background-color: #dbdbdb;
                 box-shadow: 0 7px 15px rgba(0,0,0,0.2);
                 border: 5px solid #ffffff;
@@ -108,15 +154,10 @@
 
             .slope {
             background-image: url("https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs=w240-h480-rw");
-            position: relative;
-            top: 250px;
-            left: 350px;
             display: flex;
             justify-content: center;
             align-items: center;
-            place-items: center;
-            width: 500px;         
-            height: 250px;        
+            place-items: center;        
             background-color: #f0f0f0; 
             padding: 20px;        
             margin: 30px;         
@@ -124,16 +165,15 @@
             border-radius: 25px;
             z-index: 3;
             border: 1px solid #ffffff;
-            .slope a {
-                text-decoration: none;
-            }    
-            
+                
             cursor: pointer;
 
             transition: transform 0.7s ease;
         }
+            .slope a {
+                text-decoration: none;
+            }    
             .slope:hover {
-                transform:scale(1.15);
                 background-color: #dbdbdb;
                 box-shadow: 0 7px 15px rgba(0,0,0,0.2);
                 border: 5px solid #ffffff;
@@ -170,15 +210,10 @@
             
             .subwaysurfers {
             background-image: url("https://images.hindustantimes.com/img/2022/09/09/1600x900/Subway_Surfers_1662720383211_1662720383417_1662720383417.png");
-            position: relative;
-            top: 300px;
-            left: 350px;
             display: flex;
             justify-content: center;
             align-items: center;
-            place-items: center;
-            width: 500px;         
-            height: 250px;        
+            place-items: center;    
             background-color: #f0f0f0; 
             padding: 20px;        
             margin: 30px;         
@@ -186,16 +221,15 @@
             border-radius: 25px;
             z-index: 3;
             border: 1px solid #ffffff;
-            .subwaysurfers a {
-                text-decoration: none;
-            }    
             
             cursor: pointer;
 
             transition: transform 0.7s ease;
         }
+            .subwaysurfers a {
+                text-decoration: none;
+            }    
             .subwaysurfers:hover {
-                transform:scale(1.15);
                 background-color: #dbdbdb;
                 box-shadow: 0 7px 15px rgba(0,0,0,0.2);
                 border: 5px solid #ffffff;
@@ -212,32 +246,26 @@
 
             .cookieclicker {
             background-image: url("https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok");
-            position: relative;
-            top: 350px;
-            left: 350px;
             display: flex;
             justify-content: center;
             align-items: center;
-            place-items: center;
-            width: 500px;         
-            height: 250px;        
+            place-items: center;      
             background-color: #f0f0f0; 
             padding: 20px;        
             margin: 30px;         
             box-sizing: border-box; 
             border-radius: 25px;
             z-index: 3;
-            border: 1px solid #ffffff;
-            .cookieclicker a {
-                text-decoration: none;
-            }    
+            border: 1px solid #ffffff;   
             
             cursor: pointer;
 
             transition: transform 0.7s ease;
         }
+              .cookieclicker a {
+                text-decoration: none;
+            } 
             .cookieclicker:hover {
-                transform:scale(1.15);
                 box-shadow: 0 7px 15px rgba(0,0,0,0.2);
                 background-color: #dbdbdb;
                 border: 5px solid #ffffff;
@@ -382,24 +410,25 @@
     
     <body> 
         
-       
+     <div class="games"> 
         <div class="slitherio" title="Slither.io">
-            <a href="spanish.html" class="large-link" class="slitheriolink"><h3>Slither.io</h3></div></a>
+            <a href="spanish.html" class="large-link" class="slitheriolink"><h3>Slither.io</h3></a>
          </div> 
           
 
          <div class="slope" title="Slope 2">
-             <a href="https://drive.google.com/file/d/1IS41Lxh7Yuu4QZh7AcyhUGng_PuhwiEP/view" class="large-link" class="slopelink"><h3>Slope</h3></div></a>
+             <a href="https://drive.google.com/file/d/1IS41Lxh7Yuu4QZh7AcyhUGng_PuhwiEP/view" class="large-link" class="slopelink"><h3>Slope</h3></a>
          </div>
   
 
          <div class="subwaysurfers" title="Subway Surfers">
-            <a href="#" class="large-link" class="subwaysurferslink"><h3>Subway Surfers</h3></div></a>
+            <a href="#" class="large-link" class="subwaysurferslink"><h3>Subway Surfers</h3></a>
          </div>
 
          <div class="cookieclicker" title="Cookie Clicker">
-            <a href="#" class="large-link" class="cookieclickerlink"><h3>Cookie Clicker</h3></div></a>
+            <a href="#" class="large-link" class="cookieclickerlink"><h3>Cookie Clicker</h3></a>
          </div>
+    </div>
 
 <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 
