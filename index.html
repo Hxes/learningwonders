@@ -45,12 +45,6 @@
                 font-size: 20px;
                 }
 
-                .welcome {
-                    position: static;
-                    text-align: center;
-                    margin-top: 100px;
-                    font-size: 36px;
-                }
 
                 .circle {
                     top: 15px;
@@ -87,7 +81,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                margin-top: 120px;
+                margin-top: 80px;
                 gap: 50px;
             }
             
@@ -180,8 +174,10 @@
     
 
             @keyframes fadein {
-                0% {opacity: 0;}
-                100% {opacity: 1;}
+                from{opacity: 0;
+                    transform: translateY(-20px);}
+                to{opacity:1
+                transform: translateY(0);}
             }
             
             .welcome {
@@ -189,9 +185,8 @@
             }
             
             .welcome {
-                position: relative;
-                top: -1100px;
-                left: 430px;
+                margin-top: 120px;
+                text-align: center;
                 font-family: Brush Script MT;
                 font-size: 50px;
                 color: #ffffff;
@@ -379,7 +374,11 @@
     
     <body> 
         
-     <div class="games"> 
+    <div class="welcome">
+        <h1>Welcome</h1>
+    </div>
+        
+    <div class="games"> 
       <a href="spanish.html" class="game-card slitherio large-link">
          
             <h3>Slither.io</h3>
@@ -388,7 +387,7 @@
           
 
          
-                 <a href="https://drive.google.com/file/d/1IS41Lxh7Yuu4QZh7AcyhUGng_PuhwiEP/view" class="game-card large-link slope"><h3>Slope</h3></a>
+                 <a href="japanese.html" class="game-card large-link slope"><h3>Slope</h3></a>
          
   
 
@@ -404,8 +403,8 @@
 <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 
 <ul id="myMenu">
-  <li><a href="file:///media/fuse/drivefs-c80aaf46e227acb74b246bccd0d1a0ff/root/Slitherio.html">Slither.io</a></li>
-  <li><a href="#">Slope</a></li>
+  <li><a href="spanish.html">Slither.io</a></li>
+  <li><a href="japanese.html">Slope</a></li>
   <li><a href="#">Subway Surfers</a></li>
   <li><a href="#">Cookie Clicker</a></li>
   <li><a href="#">Granny</a></li>
@@ -415,11 +414,6 @@
   <li><a href="#">Snow Rider 3d</a></li>
 </ul>
 
-
-    <div class="welcome">
-        <h1>Welcome</h1>
-
-    </div>
    
         
 <style>
