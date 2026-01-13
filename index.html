@@ -380,7 +380,7 @@
     </div>
         
     <div class="games"> 
-      <a href="spanish.html" class="game-card slitherio large-link">
+      <a href="spanish.html" class="game-card slitherio large-link" data-title="Slither.io">
          
             <h3>Slither.io</h3>
          
@@ -388,32 +388,21 @@
           
 
          
-                 <a href="japanese.html" class="game-card large-link slope"><h3>Slope</h3></a>
+                 <a href="japanese.html" class="game-card large-link slope" data-title="Slope"><h3>Slope 2</h3></a>
          
   
 
         
-            <a href="#" class="game-card large-link subwaysurfers"><h3>Subway Surfers</h3></a>
+            <a href="#" class="game-card large-link subwaysurfers" data-title="Subway Surfers"><h3>Subway Surfers</h3></a>
         
 
          
-            <a href="#" class="game-card large-link cookieclicker"><h3>Cookie Clicker</h3></a>
+            <a href="#" class="game-card large-link cookieclicker" data-title="Cookie Clicker"><h3>Cookie Clicker</h3></a>
          
     </div>
 
-<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a game">
 
-<ul id="myMenu">
-  <li><a href="spanish.html">Slither.io</a></li>
-  <li><a href="japanese.html">Slope</a></li>
-  <li><a href="#">Subway Surfers</a></li>
-  <li><a href="#">Cookie Clicker</a></li>
-  <li><a href="#">Granny</a></li>
-  <li><a href="#">Drive Mad</a></li>
-  <li><a href="#">FNAF 1</a></li>
-  <li><a href="#">Burgers and Frights</a></li>
-  <li><a href="#">Snow Rider 3d</a></li>
-</ul>
 
    
         
@@ -432,53 +421,26 @@
   z-index: 1000;
 }
 
-/* Push menu below the fixed search bar */
-#myMenu {
-  position: fixed;
-  top: -10px;
-  left: 0px;
-  list-style-type: none;
-  padding: 0;
-  margin: 40px 0 0 0; /* space for search bar */
-  z-index: 1;
-}
 
-/* Style the navigation links */
-#myMenu li a {
-  padding: 12px;
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-
-#myMenu li a:hover {
-  animation: fading 1s;
-  background-color: #eee;
-  border-radius: 25px;
-  z-index: 1;
-}
-
-
-    
 </style>
 
 <script>
-function myFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("mySearch");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myMenu");
-  li = ul.getElementsByTagName("li");
+const searchInput = document.getElementById('mySearch');
+const cards = document.querySelectorAll('.game-card');
 
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
+
+  cards.forEach(card => {
+    const title = card.dataset.title.toLowerCase();
+
+    if (title.includes(query)) {
+      card.style.display = '';
     } else {
-      li[i].style.display = "none";
+      card.style.display = 'none';
     }
-  }
-}
+  });
+});
 </script>
 <div class="circle" id="circle" title="Click">
         <div class="content" id="content">
