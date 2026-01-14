@@ -18,6 +18,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
         <style>
 
+            /* REQUIRED for pin button positioning */
+.game-card {
+  position: relative;
+}
+
+/* Pin button */
+.pin-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.pin-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Pinned card styling */
+.game-card.pinned {
+  order: -1;
+  outline: 4px solid gold;
+  box-shadow: 0 0 25px gold;
+}
+
+.game-card.pinned .pin-btn {
+  background: gold;
+}
+            
             /* Pinned card styling */
 .game-card.pinned {
   order: -1;                 /* Moves pinned cards to the top */
@@ -626,10 +665,6 @@ gameCards.forEach(card => {
     card.classList.add('pinned');
   }
 
-  // Toggle pin on double-click
-  card.addEventListener('dblclick', (e) => {
-    e.preventDefault(); // prevent navigation
-    card.classList.toggle('pinned');
 
     let updatedPins = JSON.parse(localStorage.getItem('pinnedGames')) || [];
 
@@ -646,4 +681,45 @@ gameCards.forEach(card => {
 });
 </script>
 
+<script>
+const gameCards = document.querySelectorAll('.game-card');
+const savedPins = JSON.parse(localStorage.getItem('pinnedGames')) || [];
+
+gameCards.forEach(card => {
+  const title = card.dataset.title;
+
+  // Create pin button
+  const pinBtn = document.createElement('button');
+  pinBtn.className = 'pin-btn';
+  pinBtn.textContent = '📌';
+
+  // Prevent navigation when clicking pin
+  pinBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    card.classList.toggle('pinned');
+
+    let pins = JSON.parse(localStorage.getItem('pinnedGames')) || [];
+
+    if (card.classList.contains('pinned')) {
+      if (!pins.includes(title)) pins.push(title);
+    } else {
+      pins = pins.filter(t => t !== title);
+    }
+
+    localStorage.setItem('pinnedGames', JSON.stringify(pins));
+  });
+
+  card.appendChild(pinBtn);
+
+  // Restore pinned state
+  if (savedPins.includes(title)) {
+    card.classList.add('pinned');
+  }
+});
+</script>
+
+
+</body>
 </html>
