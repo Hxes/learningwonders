@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learn Coding for Free</title>
+    </head>
+    <body>
+        <style>
+            
+            .menu-item {
+                display: inline-flex;
+                align-items: center;   /* vertical alignment */
+                gap: 20px;              /* space between text and arrow */
+                font-size: 35px;
+                transition: transform .2s ease-in-out;
+            }
+            
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            .select-menu img{
+                width: 40px;
+                height: auto;
+            }
+            .welcoming{
+                width: 60vh;
+                height: 30vh;
+                position: relative;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                background-color: #000000;
+                margin: 0 auto;
+                padding: 10px;
+                display: flex;              /* ADD THIS */
+                flex-direction: column;
+            }
+            .intro-text{
+                font-size: 60px;
+                background-color: #ffffff;
+                
+            }
+            .browse{
+                font-size: 30px;
+                background-color: #ffffff;
+                border-radius: 15%;
+                border: 3px solid #000000;
+                
+            }
+
+            .select-menu{
+                text-align: left;
+                gap: 50px;
+                margin: 10vh;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            @keyframes move{
+                 0% { transform: translateX(0);
+                      opacity: 0; }
+                 1% {  transform: translateX(-20px);
+                       opacity: 1;}
+            }
+
+            
+            .arrow{
+                opacity: 0;
+                margin-left: 10px;
+                transition: all 0.4s ease;
+                transform: translateX(-25px);
+                display: block;
+                transition: 
+                    transform 0.25s cubic-bezier(.4,0,.2,1),
+                    opacity 0.2s ease;
+            }
+            
+            .menu-item:hover .arrow{
+                opacity: 1;
+                transform: translateX(0) scale(1.1);
+            }
+            .menu-link {
+                display: inline-block;       /* so border hugs the text */
+                padding: 5px 10px;           /* optional spacing around text */
+                border: 3px solid transparent; 
+                border-radius: 8px;
+                transition: all 0.2s ease;
+                text-decoration: none;
+                color: black;
+                font-size: 25px;
+            }
+            .menu-link:hover {
+                border-color: black;         /* only around text */
+            }
+
+        </style>
+
+        <div class="welcoming">
+            <p class="intro-text">Learning Coding Made Easy!</p>
+            <p class="browse">Select your course!</p>
+        </div>
+        
+        <div class="select-menu">
+            <div class="html menu-item"> 
+                <a href="file:///media/fuse/drivefs-c80aaf46e227acb74b246bccd0d1a0ff/root/learn-html.html" class="menu-link">Learn HTML</a>
+                <img src="https://storage.needpix.com/rsynced_images/arrow-27316_1280.png" class="arrow">
+            </div>
+            <div class="css menu-item">
+                <a href="" class="menu-link">Learn CSS</a>
+                <img src="https://storage.needpix.com/rsynced_images/arrow-27316_1280.png" class="arrow">
+            </div>
+            <div class="java menu-item">
+                <a href="" class="menu-link">Learn Java</a>
+                <img src="https://storage.needpix.com/rsynced_images/arrow-27316_1280.png" class="arrow">
+            </div>
+            <div class="javascript menu-item">
+                <a href="" class="menu-link">Learn JavaScript</a>
+                <img src="https://storage.needpix.com/rsynced_images/arrow-27316_1280.png" class="arrow">
+            </div>
+        </div>
+    </body>
+</html>
