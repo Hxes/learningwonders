@@ -63,6 +63,16 @@
     .submit-btn.active {
         background-color: #6bd532;
     }
+    .go-back{
+        margin-top: 20px;
+        padding: 12px 30px;
+        font-size: 18px;
+        border: 2px solid #000000;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #6bd532;
+        color: white;
+    }
 
     .correct {
         background-color: #6bd532 !important;
@@ -81,6 +91,7 @@
 <div class="content" id="content"></div>
 <div id="answers"></div>
 <button class="submit-btn" id="submitBtn">Continue</button>
+<button class="go-back" id="backBtn" style="display: none;">Home</button>
 
 <script>
 
@@ -89,7 +100,7 @@ const steps = [
     // 3 INFORMATION PAGES
     {
         type: "info",
-        content: "HTML stands for HyperText Markup Language. It is the coding language at the heart of websites across the web, and makes it easy to create the foundation for amazing websites. HTML is surprisingly simple, yet very diverse. It even has direct, built in connections to two other crucial languages in web developement: CSS (Cascading Style Sheets) and JavaScript.                                     In this course, you will learn basic skills necessary to make websites of all types. The first thing we will learn is the structure of the HTML language. Press continue when you're ready."
+        content: "HTML stands for HyperText Markup Language. It is the coding language at the heart of websites across the web, and makes it easy to create the foundation for amazing websites. HTML is surprisingly simple, yet very diverse. It even has direct, built in connections to two other crucial languages in web developement: CSS (Cascading Style Sheets) and JavaScript. In this course, you will learn basic skills necessary to make websites of all types. The first thing we will learn is the structure of the HTML language. Press continue when you're ready."
     },
     {
         type: "info",
@@ -97,11 +108,15 @@ const steps = [
     },
     {
         type: "info",
-        content: "Now, let's learn some common and useful HTML tags. We will learn: headings, buttons, and links."
+        content: "Now, let's learn some common and useful HTML tags. We will learn: headings, buttons, and links. Press continue and we will start learning."
     },
     {
         type: "info",
-        content: "First, let's learn headers. Headings are used to create various sizes and easily identifiable chunks of text. The format is: <h1>[what you want to say]</h1>. You can change the number from 1-6, 1 being the biggest heading and 6 being the smallest heading. "
+        content: "First, let's learn headings. Headings are used to create various sizes and easily identifiable chunks of text. The format is: <h1>[what you want to say]</h1>. You can change the number from 1-6, 1 being the biggest heading and 6 being the smallest heading."
+    },
+    {
+        type: "info",
+        content: "Now, let's learn about buttons. Buttons can be used as the base for links and JavaScript functions, and are especially good for aesthetics."
     },
 
     // 3 QUESTIONS
@@ -141,6 +156,7 @@ const progressBar = document.querySelector('.current-progress');
 const content = document.getElementById("content");
 const answersDiv = document.getElementById("answers");
 const submitBtn = document.getElementById("submitBtn");
+const backBtn = document.getElementById("backBtn");
 
 function updateProgress() {
     const progress = (currentStep / steps.length) * 100;
@@ -161,6 +177,7 @@ function loadStep() {
     if (step.type === "info") {
         submitBtn.classList.add("active");
         submitBtn.style.backgroundColor = "#6bd532";
+        
     }
 
     if (step.type === "question") {
@@ -212,6 +229,8 @@ function nextStep() {
         answersDiv.innerHTML = "";
         submitBtn.style.display = "none";
         progressBar.style.width = "100%";
+        backBtn.style.display = "block";
+        backBtn.addEventListener("click", () => { window.location.href = "learn-html.html"; });
     }
 }
 
