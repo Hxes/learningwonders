@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<style>
+    body {
+        font-family: Arial;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    .outline-progress{
+        width: 80%;
+        height: 5vh;
+        margin: 3vh auto;
+        background-color: #d3d3d3;
+        border-radius: 25px;
+        overflow: hidden;
+    }
+
+    .current-progress{
+        height: 100%;
+        width: 0%;
+        background-color: #6bd532;
+        transition: width .7s ease;
+    }
+
+    .content {
+        font-size: 22px;
+        margin: 40px auto;
+        width: 70%;
+    }
+
+    .answer-btn {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        background: #eee;
+        border: none;
+        transition: all .1s ease;
+    }
+
+    .selected {
+        border: 2px solid #000000;
+    }
+
+    .submit-btn {
+        margin-top: 20px;
+        padding: 12px 30px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: grey;
+        color: white;
+        transition: all .5s ease;
+    }
+
+    .submit-btn.active {
+        background-color: #6bd532;
+    }
+
+    .correct {
+        background-color: #6bd532 !important;
+    }
+
+    .wrong {
+        background-color: #ff6b6b !important;
+    }
+</style>
+
+<!-- Progress Bar -->
+<div class="outline-progress">
+    <div class="current-progress"></div>
+</div>
+
+<div class="content" id="content"></div>
+<div id="answers"></div>
+<button class="submit-btn" id="submitBtn">Continue</button>
+
+<script>
+
+const steps = [
+
+    // 3 INFORMATION PAGES
+    {
+        type: "info",
+        content: "HTML stands for HyperText Markup Language. It is the coding language at the heart of websites across the web, and makes it easy to create the foundation for amazing websites. HTML is surprisingly simple, yet very diverse. It even has direct, built in connections to two other crucial languages in web developement: CSS (Cascading Style Sheets) and JavaScript.                                     In this course, you will learn basic skills necessary to make websites of all types. The first thing we will learn is the structure of the HTML language. Press continue when you're ready."
+    },
+    {
+        type: "info",
+        content: "HTML is formatted with a system of tags. These tags tell the computer what the computer should create, and how it should do it. Here is an example of how to format a text paragraph in HTML: <p>[what you want to say]</p>. This is a classic example of a container tag. A container tag is when it has one tag on either side. They always contain the same letters, but the character that signals the last tag is the forward slash(/). If you do not include this, the computer will not be able to execute this line of code properly. The second type of tags are empty tags. Empty tags have only one enclosed set of angled brackets, and the line of code goes inside of it, not in between the two tags like in container tags. A classic example is the line break code in HTML: <br>. You use this to create a vertical space in your webpage wherever it is necessary."
+    },
+    {
+        type: "info",
+        content: "Now, let's learn some common and useful HTML tags. We will learn: headings, buttons, and links."
+    },
+    {
+        type: "info",
+        content: "First, let's learn headers. Headings are used to create various sizes and easily identifiable chunks of text. The format is: <h1>[what you want to say]</h1>. You can change the number from 1-6, 1 being the biggest heading and 6 being the smallest heading. "
+    },
+
+    // 3 QUESTIONS
+    {
+        type: "question",
+        content: "What does HTML stand for?",
+        answers: [
+            { text: "HyperText Markup Language", correct: true },
+            { text: "HighText Machine Language", correct: false },
+            { text: "HyperTransfer Markup Language", correct: false }
+        ]
+    },
+    {
+        type: "question",
+        content: "Which tag makes a paragraph?",
+        answers: [
+            { text: "<p>", correct: true },
+            { text: "<div>", correct: false },
+            { text: "<span>", correct: false }
+        ]
+    },
+    {
+        type: "question",
+        content: "Which tag creates the largest heading?",
+        answers: [
+            { text: "<h1>", correct: true },
+            { text: "<h6>", correct: false },
+            { text: "<header>", correct: false }
+        ]
+    }
+];
+
+let currentStep = 0;
+let selectedAnswer = null;
+
+const progressBar = document.querySelector('.current-progress');
+const content = document.getElementById("content");
+const answersDiv = document.getElementById("answers");
+const submitBtn = document.getElementById("submitBtn");
+
+function updateProgress() {
+    const progress = (currentStep / steps.length) * 100;
+    progressBar.style.width = progress + "%";
+}
+
+function loadStep() {
+
+    selectedAnswer = null;
+    submitBtn.classList.remove("active");
+    submitBtn.style.backgroundColor = "grey";
+    submitBtn.disabled = false;
+
+    const step = steps[currentStep];
+    content.textContent = step.content;
+    answersDiv.innerHTML = "";
+
+    if (step.type === "info") {
+        submitBtn.classList.add("active");
+        submitBtn.style.backgroundColor = "#6bd532";
+    }
+
+    if (step.type === "question") {
+        step.answers.forEach(answer => {
+            const btn = document.createElement("button");
+            btn.textContent = answer.text;
+            btn.classList.add("answer-btn");
+
+            btn.addEventListener("click", () => {
+                document.querySelectorAll(".answer-btn").forEach(b => b.classList.remove("selected"));
+                btn.classList.add("selected");
+                selectedAnswer = answer;
+
+                submitBtn.classList.add("active");
+                submitBtn.style.backgroundColor = "#6bd532";
+            });
+
+            answersDiv.appendChild(btn);
+        });
+    }
+
+    updateProgress();
+}
+
+submitBtn.addEventListener("click", () => {
+
+    const step = steps[currentStep];
+
+    if (step.type === "info") {
+        nextStep();
+        return;
+    }
+
+    if (!selectedAnswer) return;
+
+    if (selectedAnswer.correct) {
+        nextStep();
+    } else {
+        alert("Incorrect. Try again.");
+    }
+});
+
+function nextStep() {
+    currentStep++;
+    if (currentStep < steps.length) {
+        loadStep();
+    } else {
+        content.textContent = "Lesson Complete! 🎉";
+        answersDiv.innerHTML = "";
+        submitBtn.style.display = "none";
+        progressBar.style.width = "100%";
+    }
+}
+
+loadStep();
+
+</script>
+
+</body>
+</html>
